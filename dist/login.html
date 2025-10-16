@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول - VSCO Black</title>
+<style>
+  body { margin:0; height:100vh; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, #0a0a0a, #1a1a1a); font-family:"Poppins","Tajawal",sans-serif; color:#fff; }
+  .login-box { background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:40px; width:90%; max-width:360px; text-align:center; box-shadow:0 0 25px rgba(255,255,255,0.05);}
+  h1 { margin-bottom:25px; font-size:22px; letter-spacing:1px; }
+  input { width:100%; padding:12px 14px; margin-bottom:18px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:#fff; outline:none; font-size:15px; }
+  input:focus { border-color:#fff; }
+  button { width:100%; padding:12px; background:#fff; color:#000; border:none; border-radius:8px; font-size:16px; font-weight:bold; cursor:pointer; transition:0.3s; }
+  button:hover { background:#ddd; }
+  p { margin-top:20px; font-size:13px; color:#aaa; }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+  <h1>تسجيل الدخول</h1>
+  <input type="text" id="username" placeholder="اسم المستخدم">
+  <input type="password" id="password" placeholder="كلمة المرور">
+  <button id="loginBtn">دخول</button>
+  <p>© معرض VSCO Black</p>
+</div>
+
+<script>
+const loginBtn = document.getElementById("loginBtn");
+loginBtn.addEventListener("click", () => {
+  const user = document.getElementById("username").value.trim();
+  const pass = document.getElementById("password").value.trim();
+  if(user === "kareem" && pass === "1234") {
+    localStorage.setItem("loggedIn","true");
+    window.location.href = "gallery.html";
+  } else {
+    alert("❌ اسم المستخدم أو كلمة المرور غير صحيحة");
+  }
+});
+</script>
+
+</body>
+</html>
